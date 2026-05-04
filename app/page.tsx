@@ -330,9 +330,12 @@ export default function Home() {
   };
 
   const contacts = [
-    { name: 'Ayah (Mahmud)', phone: '60123456789' },
-    { name: 'Ibu (Azizah)', phone: '60198765432' },
-    { name: 'Muqri', phone: '60112233445' }
+    { name: 'Ayah Pengantin Lelaki (Shamsuddin)', phone: '60123456789' },
+    { name: 'Ibu Pengantin Lelaki (Mariani)', phone: '60123456789' },
+    { name: 'Ayah Pengantin Perempuan (Fauzi)', phone: '60123456789' },
+    { name: 'Ibu Pengantin Perempuan (Naimah)', phone: '60198765432' },
+    { name: 'Muqri Amin', phone: '601114907908' },
+    { name: 'Syamimi', phone: '601151533014' }
   ];
 
   return (
@@ -425,11 +428,25 @@ export default function Home() {
 
             <section className="w-full max-w-2xl px-6 pt-24 pb-16 text-center">
               <Typewriter text="Assalammualaikum W.B.T" className="font-italiana text-lg text-[#D4AF37] mb-8 tracking-[0.2em]" />
-              <div className="mb-16 space-y-6">
-                <div className="space-y-1">
-                  <Typewriter text="Mohd Shamsuddin Omar & Mariani Binti Hussein" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A]" />
-                  <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2 }} className="text-[#D4AF37] font-italiana italic text-lg">&</motion.p>
-                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={2.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A]" />
+              <div className="mb-20 space-y-12">
+                <div className="space-y-4">
+                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
+                    <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Lelaki</span>
+                  </div>
+                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                </div>
+
+                <div className="relative flex justify-center items-center py-4">
+                  <div className="absolute w-20 h-[0.5px] bg-[#D4AF37]/30 left-1/2 -translate-x-[120%]" />
+                  <Heart className="text-[#D4AF37] opacity-40" size={20} />
+                  <div className="absolute w-20 h-[0.5px] bg-[#D4AF37]/30 right-1/2 translate-x-[120%]" />
+                </div>
+
+                <div className="space-y-4">
+                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
+                    <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Perempuan</span>
+                  </div>
+                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={2.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
                 </div>
               </div>
               <div className="relative mb-20 flex flex-col items-center px-4">
@@ -481,6 +498,10 @@ export default function Home() {
                     {['Ahd', 'Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab'].map(d => <span key={d}>{d}</span>)}
                   </div>
                   <div className="grid grid-cols-7 gap-3">
+                    {/* Empty slots for August 2026 (1st is Saturday, so 6 empty slots) */}
+                    {Array.from({ length: 6 }).map((_, i) => (
+                      <div key={`empty-${i}`} className="aspect-square" />
+                    ))}
                     {Array.from({ length: 31 }, (_, i) => {
                       const day = i + 1;
                       const isWeddingDay = day === 30;
