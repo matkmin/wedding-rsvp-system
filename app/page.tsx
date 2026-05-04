@@ -858,7 +858,7 @@ export default function Home() {
                         
                         <div className="flex bg-[#F5F1E9] p-2 rounded-2xl mb-10 gap-2">
                           <button onClick={() => setActiveBank('maybank')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'maybank' ? 'bg-white text-[#D4AF37] shadow-md' : 'text-[#7A7A7A]'}`}>Maybank</button>
-                          <button onClick={() => setActiveBank('cimb')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'cimb' ? 'bg-white text-[#8C1B1B] shadow-md' : 'text-[#7A7A7A]'}`}>CIMB Bank</button>
+                          <button onClick={() => setActiveBank('cimb')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'cimb' ? 'bg-white text-[#8C1B1B] shadow-md' : 'text-[#7A7A7A]'}`}>Ryt Bank Muqri</button>
                         </div>
 
                         <AnimatePresence mode="wait">
@@ -869,20 +869,20 @@ export default function Home() {
                           >
                             <div className="w-full aspect-square max-w-[280px] rounded-2xl overflow-hidden mb-6 border-4 border-[#F5F1E9] relative">
                               <Image 
-                                src={activeBank === 'maybank' ? '/maybank_muqri.png' : '/cimb_qr.png'} 
+                                src={activeBank === 'maybank' ? '/maybank_muqri.png' : '/ryt_bank_muqri.jpg'} 
                                 alt="QR Code" 
                                 fill
                                 className="object-cover"
                               />
                             </div>
-                            <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'CIMB DuitNow QR'}</p>
-                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">{activeBank === 'maybank' ? 'Muqri Amin' : 'Mariani Binti Hussein'}</p>
+                            <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'Ryt Bank DuitNow QR'}</p>
+                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">{activeBank === 'maybank' ? 'Muqri Amin' : 'Muqri Amin'}</p>
                             
                             <div className="flex w-full gap-4">
                               <button onClick={() => copyAccount(activeBank === 'maybank' ? '162786406748' : '8012345678')} className="flex-1 py-5 bg-[#F5F1E9] text-[#8C7355] rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
                                 {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Salin' : 'Salin No.'}
                               </button>
-                              <a href={activeBank === 'maybank' ? '/maybank_muqri.png' : '/cimb_qr.png'} download className="flex-1 py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                              <a href={activeBank === 'maybank' ? '/maybank_muqri.png' : '/ryt_bank_muqri.jpg'} download className="flex-1 py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
                                 <Download size={16} /> Simpan QR
                               </a>
                             </div>
