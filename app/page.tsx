@@ -466,9 +466,9 @@ export default function Home() {
               </div>
 
               <div className="mb-20">
-                <BlurReveal delay={0.1}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri</h1></BlurReveal>
+                <BlurReveal delay={0.1}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri Amin </h1></BlurReveal>
                 <BlurReveal delay={0.15}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
-                <BlurReveal delay={0.2}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Syamimi</h1></BlurReveal>
+                <BlurReveal delay={0.2}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Nur Syamimi</h1></BlurReveal>
               </div>
             </section>
 
