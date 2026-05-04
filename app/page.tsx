@@ -48,7 +48,7 @@ const BlurReveal = ({ children, delay = 0 }: { children: React.ReactNode, delay?
     initial={{ opacity: 0, filter: 'blur(10px)', y: 20 }}
     whileInView={{ opacity: 1, filter: 'blur(0px)', y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 1.2, delay, ease: "easeOut" }}
+    transition={{ duration: 0.8, delay, ease: "easeOut" }}
   >
     {children}
   </motion.div>
@@ -434,7 +434,7 @@ export default function Home() {
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Lelaki</span>
                   </div>
-                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.2} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
                 </div>
 
                 <div className="relative flex justify-center items-center py-4">
@@ -447,27 +447,27 @@ export default function Home() {
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Perempuan</span>
                   </div>
-                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={0.4} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
                 </div>
               </div>
 
               <div className="relative mb-20 flex flex-col items-center px-4">
-                <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 2.5, duration: 1 }} className="w-full h-[0.5px] bg-[#E8E2D8] absolute top-1/2 -translate-y-1/2" />
+                <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 0.5, duration: 1 }} className="w-full h-[0.5px] bg-[#E8E2D8] absolute top-1/2 -translate-y-1/2" />
                 <div className="relative z-10 px-8 bg-[#FCFBF8] text-center">
-                  <Typewriter text="Dengan penuh kesyukuran, kami mempersilakan" delay={2.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.2em] mb-4" />
-                  <BlurReveal delay={3}>
+                  <Typewriter text="Dengan penuh kesyukuran, kami mempersilakan" delay={0.6} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.2em] mb-4" />
+                  <BlurReveal delay={0.7}>
                     <p className="text-[#8C7355] font-italiana text-[11px] font-bold tracking-[0.3em] mb-4 leading-relaxed uppercase">
                       Dato' | Datin | Tuan | Puan | Encik | Cik
                     </p>
                   </BlurReveal>
-                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda-anakanda kami" delay={3.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
+                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda-anakanda kami" delay={0.8} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
                 </div>
               </div>
 
               <div className="mb-20">
                 <BlurReveal delay={0.1}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri</h1></BlurReveal>
-                <BlurReveal delay={0.2}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
-                <BlurReveal delay={0.3}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Syamimi</h1></BlurReveal>
+                <BlurReveal delay={0.15}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
+                <BlurReveal delay={0.2}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Syamimi</h1></BlurReveal>
               </div>
             </section>
 
@@ -522,16 +522,34 @@ export default function Home() {
               </BlurReveal>
             </section>
 
-            <section id="gallery" className="w-full max-w-5xl px-6 py-24">
-              <BlurReveal><div className="text-center mb-16 flex flex-col items-center gap-3"><Camera className="text-[#D4AF37] opacity-40" size={32} /><h3 className="font-serif text-4xl text-[#1A1A1A]">Galeri Memori</h3></div></BlurReveal>
-              <div className="grid grid-cols-12 gap-6 px-4">
+            <section id="gallery" className="w-full max-w-6xl px-6 py-24">
+              <BlurReveal>
+                <div className="text-center mb-16 flex flex-col items-center gap-3">
+                  <Camera className="text-[#D4AF37] opacity-40" size={32} />
+                  <h3 className="font-serif text-4xl text-[#1A1A1A]">Galeri Memori</h3>
+                </div>
+              </BlurReveal>
+              
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 {[
-                  { src: '/couple.png', span: 'col-span-12 md:col-span-8 aspect-[16/10]' },
-                  { src: '/rings.png', span: 'col-span-6 md:col-span-4 aspect-square' },
-                  { src: '/venue.png', span: 'col-span-6 md:col-span-4 aspect-square' }
-                ].map((img, i) => (
-                  <motion.div key={i} onClick={() => setSelectedImage(img.src)} whileHover={{ scale: 1.02 }} className={`${img.span} rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white cursor-zoom-in`}>
-                    <img src={img.src} alt="Gallery" className="w-full h-full object-cover" />
+                  { src: '/gambar_tunang1.png', span: 'col-span-2 row-span-2' },
+                  { src: '/gambar_tunang2.png', span: 'col-span-1 row-span-1' },
+                  { src: '/gambar_tunang3.png', span: 'col-span-1 row-span-1' },
+                  { src: '/gambar_tunang4.png', span: 'col-span-1 row-span-1' },
+                  { src: '/gambar_tunang5.png', span: 'col-span-1 row-span-1' },
+                ].map((img, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: idx * 0.1 }}
+                    onClick={() => setSelectedImage(img.src)}
+                    whileHover={{ scale: 1.02 }}
+                    className={`relative rounded-[2rem] overflow-hidden shadow-xl border-2 border-white cursor-zoom-in ${img.span} aspect-square md:aspect-auto`}
+                  >
+                    <img src={img.src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-500" />
                   </motion.div>
                 ))}
               </div>
