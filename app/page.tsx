@@ -485,7 +485,7 @@ export default function Home() {
                     { label: 'Minit', value: timeLeft.minutes },
                     { label: 'Saat', value: timeLeft.seconds }
                   ].map((item, idx) => (
-                    <div key={item.label} className="bg-white p-5 rounded-[2rem] border border-[#E8E2D8] shadow-sm">
+                    <div key={item.label} className="bg-white p-3 md:p-5 rounded-[2rem] border border-[#E8E2D8] shadow-sm">
                       <span className="text-2xl md:text-3xl font-serif text-[#8C7355] block">{item.value}</span>
                       <span className="text-[8px] font-black uppercase tracking-[0.2em] text-[#7A7A7A]">{item.label}</span>
                     </div>
@@ -869,20 +869,20 @@ export default function Home() {
                           >
                             <div className="w-full aspect-square max-w-[280px] rounded-2xl overflow-hidden mb-6 border-4 border-[#F5F1E9] relative">
                               <Image 
-                                src={activeBank === 'maybank' ? '/maybank_qr.png' : '/cimb_qr.png'} 
+                                src={activeBank === 'maybank' ? '/maybank_muqri.png' : '/cimb_qr.png'} 
                                 alt="QR Code" 
                                 fill
                                 className="object-cover"
                               />
                             </div>
                             <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'CIMB DuitNow QR'}</p>
-                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">Mariani Binti Hussein</p>
+                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">{activeBank === 'maybank' ? 'Muqri Amin' : 'Mariani Binti Hussein'}</p>
                             
                             <div className="flex w-full gap-4">
-                              <button onClick={() => copyAccount(activeBank === 'maybank' ? '123456789012' : '8012345678')} className="flex-1 py-5 bg-[#F5F1E9] text-[#8C7355] rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                              <button onClick={() => copyAccount(activeBank === 'maybank' ? '162786406748' : '8012345678')} className="flex-1 py-5 bg-[#F5F1E9] text-[#8C7355] rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
                                 {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Salin' : 'Salin No.'}
                               </button>
-                              <a href={activeBank === 'maybank' ? '/maybank_qr.png' : '/cimb_qr.png'} download className="flex-1 py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
+                              <a href={activeBank === 'maybank' ? '/maybank_muqri.png' : '/cimb_qr.png'} download className="flex-1 py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
                                 <Download size={16} /> Simpan QR
                               </a>
                             </div>
