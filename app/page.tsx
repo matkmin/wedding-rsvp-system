@@ -31,8 +31,8 @@ const Typewriter = ({ text, delay = 0, className = "" }: { text: string, delay?:
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.1,
-            delay: delay + (i * 0.05),
+            duration: 0.05,
+            delay: delay + (i * 0.02),
           }}
         >
           {char}
@@ -427,13 +427,14 @@ export default function Home() {
             </div>
 
             <section className="w-full max-w-2xl px-6 pt-24 pb-16 text-center">
-              <Typewriter text="Assalammualaikum W.B.T" className="font-italiana text-lg text-[#D4AF37] mb-8 tracking-[0.2em]" />
+              <Typewriter text="Assalammualaikum W.B.T" className="font-italiana text-lg text-[#D4AF37] mb-12 tracking-[0.2em]" />
+              
               <div className="mb-20 space-y-12">
                 <div className="space-y-4">
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Lelaki</span>
                   </div>
-                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
                 </div>
 
                 <div className="relative flex justify-center items-center py-4">
@@ -446,25 +447,27 @@ export default function Home() {
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Perempuan</span>
                   </div>
-                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={2.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
                 </div>
               </div>
+
               <div className="relative mb-20 flex flex-col items-center px-4">
-                <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 4.5, duration: 1 }} className="w-full h-[0.5px] bg-[#E8E2D8] absolute top-1/2 -translate-y-1/2" />
+                <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 2.5, duration: 1 }} className="w-full h-[0.5px] bg-[#E8E2D8] absolute top-1/2 -translate-y-1/2" />
                 <div className="relative z-10 px-8 bg-[#FCFBF8] text-center">
-                  <Typewriter text="Dengan penuh kesyukuran, kami mempersilakan" delay={4.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.2em] mb-4" />
-                  <BlurReveal delay={5}>
+                  <Typewriter text="Dengan penuh kesyukuran, kami mempersilakan" delay={2.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.2em] mb-4" />
+                  <BlurReveal delay={3}>
                     <p className="text-[#8C7355] font-italiana text-[11px] font-bold tracking-[0.3em] mb-4 leading-relaxed uppercase">
                       Dato' | Datin | Tuan | Puan | Encik | Cik
                     </p>
                   </BlurReveal>
-                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda-anakanda kami" delay={5.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
+                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda-anakanda kami" delay={3.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
                 </div>
               </div>
+
               <div className="mb-20">
-                <BlurReveal delay={6}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri</h1></BlurReveal>
-                <BlurReveal delay={6.2}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
-                <BlurReveal delay={6.4}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Syamimi</h1></BlurReveal>
+                <BlurReveal delay={0.1}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri</h1></BlurReveal>
+                <BlurReveal delay={0.2}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
+                <BlurReveal delay={0.3}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Syamimi</h1></BlurReveal>
               </div>
             </section>
 
