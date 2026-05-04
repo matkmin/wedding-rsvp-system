@@ -556,6 +556,7 @@ export default function Home() {
                       sizes="(max-width: 768px) 50vw, 33vw"
                       className="object-cover"
                       quality={75}
+                      priority={idx === 0}
                     />
                     <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-500" />
                   </motion.div>
