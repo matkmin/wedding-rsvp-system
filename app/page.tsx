@@ -496,7 +496,7 @@ export default function Home() {
 
             <section id="calendar" className="w-full max-w-md px-6 py-16">
               <BlurReveal>
-                <div className="bg-white rounded-[3rem] shadow-xl p-12 text-center border border-[#E8E2D8]">
+                <div className="bg-white rounded-[3rem] shadow-xl p-8 md:p-12 text-center border border-[#E8E2D8]">
                   <h3 className="font-serif text-2xl text-[#1A1A1A] mb-8">Ogos 2026</h3>
                   <div className="grid grid-cols-7 gap-3 text-[10px] font-black text-[#8C7355] mb-6 uppercase">
                     {['Ahd', 'Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab'].map(d => <span key={d}>{d}</span>)}
@@ -593,10 +593,10 @@ export default function Home() {
                     { time: '12:30 PM', event: 'Ketibaan Pengantin', icon: <Heart size={16} /> },
                     { time: '04:00 PM', event: 'Majlis Berakhir', icon: <Pause size={16} /> }
                   ].map((item, idx) => (
-                    <motion.div key={idx} whileHover={{ x: idx % 2 === 0 ? 10 : -10 }} className="flex items-center justify-center gap-10 relative z-10 group">
-                      <div className="w-1/2 text-right text-xs font-bold text-[#8C7355] tracking-widest">{item.time}</div>
-                      <div className="w-10 h-10 rounded-full bg-white shadow-lg border border-[#F5F1E9] flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500">{item.icon}</div>
-                      <div className="w-1/2 text-left text-sm text-[#7A7A7A] font-serif italic">{item.event}</div>
+                    <motion.div key={idx} whileHover={{ x: idx % 2 === 0 ? 10 : -10 }} className="flex items-center justify-center gap-4 md:gap-10 relative z-10 group">
+                      <div className="flex-1 text-right text-[10px] md:text-xs font-bold text-[#8C7355] tracking-widest">{item.time}</div>
+                      <div className="w-10 h-10 rounded-full bg-white shadow-lg border border-[#F5F1E9] flex-shrink-0 flex items-center justify-center text-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white transition-all duration-500">{item.icon}</div>
+                      <div className="flex-1 text-left text-xs md:text-sm text-[#7A7A7A] font-serif italic">{item.event}</div>
                     </motion.div>
                   ))}
                 </div>
@@ -606,7 +606,7 @@ export default function Home() {
             {/* Smart RSVP Section with Memory */}
             <section id="rsvp" className="w-full max-w-2xl px-6 py-24">
               <BlurReveal>
-                <div className="bg-[#FDFCFB] p-10 md:p-16 rounded-[4rem] shadow-[0_30px_100px_-20px_rgba(140,115,85,0.15)] relative overflow-hidden border border-[#D4AF37]/20">
+                <div className="bg-[#FDFCFB] p-6 md:p-16 rounded-[4rem] shadow-[0_30px_100px_-20px_rgba(140,115,85,0.15)] relative overflow-hidden border border-[#D4AF37]/20">
                   <div className="absolute top-0 right-0 p-8 opacity-5"><Send size={120} className="text-[#8C7355]" /></div>
                   
                   <div className="text-center mb-12">
