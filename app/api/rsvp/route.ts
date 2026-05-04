@@ -56,3 +56,26 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: 'Ralat pelayan. Sila cuba lagi.' }, { status: 500 });
   }
 }
+
+export async function DELETE(request: Request) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get('id');
+
+    if (!id) {
+      return NextResponse.json({ message: 'ID diperlukan!' }, { status: 400 });
+    }
+
+    const { error } = await supabase
+      .from('rsvps')
+      .delete()
+      .eq('id', id);
+
+    if (error) throw error;
+
+    return NextResponse.json({ message: 'Data berjaya dipadam!' });
+  } catch (error) {
+    console.error('Delete Error:', error);
+    return NextResponse.json({ message: 'Gagal memadam data.' }, { status: 500 });
+  }
+}
