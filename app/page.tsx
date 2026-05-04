@@ -858,7 +858,7 @@ export default function Home() {
                         
                         <div className="flex bg-[#F5F1E9] p-2 rounded-2xl mb-10 gap-2">
                           <button onClick={() => setActiveBank('maybank')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'maybank' ? 'bg-white text-[#D4AF37] shadow-md' : 'text-[#7A7A7A]'}`}>Maybank</button>
-                          <button onClick={() => setActiveBank('cimb')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'cimb' ? 'bg-white text-[#8C1B1B] shadow-md' : 'text-[#7A7A7A]'}`}>Ryt Bank Muqri</button>
+                          <button onClick={() => setActiveBank('cimb')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'cimb' ? 'bg-white text-[#8C1B1B] shadow-md' : 'text-[#7A7A7A]'}`}>Ryt Bank</button>
                         </div>
 
                         <AnimatePresence mode="wait">
