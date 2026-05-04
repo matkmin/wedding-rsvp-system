@@ -29,10 +29,19 @@ export default function AdminPage() {
 
   const SECRET_PASSCODE = 'MUQRI2026';
 
+  useEffect(() => {
+    const auth = localStorage.getItem('admin_auth');
+    if (auth === 'true') {
+      setIsAuthenticated(true);
+      fetchRSVPs();
+    }
+  }, []);
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (passcode === SECRET_PASSCODE) {
       setIsAuthenticated(true);
+      localStorage.setItem('admin_auth', 'true');
       fetchRSVPs();
     } else {
       setError('Passcode salah. Sila cuba lagi.');
@@ -62,6 +71,9 @@ export default function AdminPage() {
       const res = await fetch(`/api/rsvp?id=${id}`, { method: 'DELETE' });
       if (res.ok) {
         setRsvps(rsvps.filter(item => item.id !== id));
+      } else {
+        const errData = await res.json();
+        alert('Gagal memadam: ' + (errData.message || 'Sila pastikan SQL Policy sudah dimasukkan di Supabase.'));
       }
     } catch (err) {
       alert('Gagal memadam data.');
@@ -160,7 +172,15 @@ export default function AdminPage() {
           </div>
           <div className="flex items-center gap-3">
             <button onClick={fetchRSVPs} className="p-3 text-[#7A7A7A] hover:text-[#1A1A1A] transition-colors"><RefreshCcw size={20} /></button>
-            <Link href="/" className="px-6 py-3 bg-[#F5F1E9] text-[#8C7355] rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-[#E8E2D8] transition-all">Keluar</Link>
+            <button 
+              onClick={() => {
+                localStorage.removeItem('admin_auth');
+                setIsAuthenticated(false);
+              }} 
+              className="px-6 py-3 bg-[#F5F1E9] text-[#8C7355] rounded-xl font-bold text-[10px] uppercase tracking-widest hover:bg-[#E8E2D8] transition-all"
+            >
+              Keluar
+            </button>
           </div>
         </div>
       </header>
