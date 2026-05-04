@@ -120,7 +120,7 @@ export default function Home() {
 
   // Countdown State
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-  const weddingDate = new Date('2026-12-21T11:00:00').getTime();
+  const weddingDate = new Date('2026-08-30T11:00:00').getTime();
 
   useEffect(() => {
     fetchWishes();
@@ -279,9 +279,9 @@ export default function Home() {
   const handleCalendar = (type: 'google' | 'apple') => {
     const title = "Majlis Perkahwinan Muqri & Syamimi";
     const details = "Sila RSVP di website jemputan.";
-    const location = "Bukit Beruntung Golf Club, Rawang, Selangor";
-    const startDate = "20261221T110000";
-    const endDate = "20261221T160000";
+    const location = "AM EVENT HALL, PT 15618, Jalan Kampung Lombong, SEKSYEN 29, 40460 Shah Alam, Selangor";
+    const startDate = "20260830T110000";
+    const endDate = "20260830T160000";
 
     if (type === 'google') {
       const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
@@ -325,8 +325,8 @@ export default function Home() {
   };
 
   const navLinks = {
-    google: "https://www.google.com/maps/search/?api=1&query=Bukit+Beruntung+Golf+and+Country+Resort",
-    waze: "https://waze.com/ul/hw285d8520"
+    google: "https://www.google.com/maps/search/?api=1&query=AM+EVENT+HALL+Shah+Alam",
+    waze: "https://waze.com/ul?q=AM+EVENT+HALL+Shah+Alam"
   };
 
   const contacts = [
@@ -375,7 +375,7 @@ export default function Home() {
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FCFBF8] p-6 overflow-hidden"
           >
             <motion.div 
-              className="relative w-full max-w-sm aspect-[4/3] bg-[#FDFCFB] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-[#E8E2D8] flex flex-col items-center justify-center overflow-hidden"
+              className="relative w-full max-sm aspect-[4/3] bg-[#FDFCFB] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-[#E8E2D8] flex flex-col items-center justify-center overflow-hidden"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -401,7 +401,7 @@ export default function Home() {
               <div className="absolute bottom-10 text-center px-8 z-10">
                 <h2 className="text-[#8C7355] font-italiana tracking-[0.4em] text-[8px] uppercase mb-4">The Wedding of</h2>
                 <h1 className="text-3xl font-serif text-[#1A1A1A] leading-tight mb-2">Muqri & Syamimi</h1>
-                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-[#D4AF37] mt-4">21 . 12 . 2026</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.3em] text-[#D4AF37] mt-4">30 . 08 . 2026</p>
               </div>
             </motion.div>
             <motion.p animate={{ opacity: [0.3, 0.6, 0.3] }} transition={{ repeat: Infinity, duration: 2 }} className="mt-12 text-[9px] font-black uppercase tracking-[0.6em] text-[#8C7355]">Klik untuk buka</motion.p>
@@ -425,10 +425,12 @@ export default function Home() {
 
             <section className="w-full max-w-2xl px-6 pt-24 pb-16 text-center">
               <Typewriter text="Assalammualaikum W.B.T" className="font-italiana text-lg text-[#D4AF37] mb-8 tracking-[0.2em]" />
-              <div className="mb-16 space-y-4">
-                <Typewriter text="Mahmud bin Jaafar" delay={1.5} className="font-serif text-3xl text-[#1A1A1A]" />
-                <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2.5 }} className="text-[#D4AF37] font-italiana italic text-2xl">&</motion.p>
-                <Typewriter text="Azizah binti Hashim" delay={3} className="font-serif text-3xl text-[#1A1A1A]" />
+              <div className="mb-16 space-y-6">
+                <div className="space-y-1">
+                  <Typewriter text="Mohd Shamsuddin Omar & Mariani Binti Hussein" delay={1.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A]" />
+                  <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 2 }} className="text-[#D4AF37] font-italiana italic text-lg">&</motion.p>
+                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={2.5} className="font-serif text-xl md:text-2xl text-[#1A1A1A]" />
+                </div>
               </div>
               <div className="relative mb-20 flex flex-col items-center px-4">
                 <motion.div initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ delay: 4.5, duration: 1 }} className="w-full h-[0.5px] bg-[#E8E2D8] absolute top-1/2 -translate-y-1/2" />
@@ -439,7 +441,7 @@ export default function Home() {
                       Dato' | Datin | Tuan | Puan | Encik | Cik
                     </p>
                   </BlurReveal>
-                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda kami" delay={5.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
+                  <Typewriter text="seisi keluarga hadir ke majlis perkahwinan anakanda-anakanda kami" delay={5.5} className="text-[#7A7A7A] font-serif italic text-[10px] tracking-[0.15em]" />
                 </div>
               </div>
               <div className="mb-20">
@@ -474,14 +476,14 @@ export default function Home() {
             <section id="calendar" className="w-full max-w-md px-6 py-16">
               <BlurReveal>
                 <div className="bg-white rounded-[3rem] shadow-xl p-12 text-center border border-[#E8E2D8]">
-                  <h3 className="font-serif text-2xl text-[#1A1A1A] mb-8">Disember 2026</h3>
+                  <h3 className="font-serif text-2xl text-[#1A1A1A] mb-8">Ogos 2026</h3>
                   <div className="grid grid-cols-7 gap-3 text-[10px] font-black text-[#8C7355] mb-6 uppercase">
                     {['Ahd', 'Isn', 'Sel', 'Rab', 'Kha', 'Jum', 'Sab'].map(d => <span key={d}>{d}</span>)}
                   </div>
                   <div className="grid grid-cols-7 gap-3">
                     {Array.from({ length: 31 }, (_, i) => {
                       const day = i + 1;
-                      const isWeddingDay = day === 21;
+                      const isWeddingDay = day === 30;
                       return (
                         <div key={day} className={`aspect-square flex items-center justify-center rounded-2xl text-sm transition-all ${isWeddingDay ? 'bg-[#8C7355] text-white font-bold scale-125 shadow-lg' : 'text-[#7A7A7A]'}`}>
                           {day}
@@ -517,14 +519,14 @@ export default function Home() {
                   <div className="p-12 md:p-20 flex flex-col items-center text-center justify-center bg-[#F5F1E9]/30">
                     <MapPin className="text-[#D4AF37] mb-8" size={32} />
                     <h4 className="font-serif text-3xl mb-4 text-[#1A1A1A]">Lokasi Majlis</h4>
-                    <p className="font-italiana text-base font-bold text-[#8C7355] mb-2 uppercase">BUKIT BERUNTUNG GOLF CLUB</p>
-                    <p className="font-serif italic text-sm text-[#7A7A7A] mb-12">Bandar Bukit Beruntung, 48300 Rawang, Selangor</p>
+                    <p className="font-italiana text-base font-bold text-[#8C7355] mb-2 uppercase">AM EVENT HALL</p>
+                    <p className="font-serif italic text-sm text-[#7A7A7A] mb-12">PT 15618, Jalan Kampung Lombong, SEKSYEN 29, 40460 Shah Alam, Selangor</p>
                     <button onClick={() => setActiveDrawer('location')} className="w-full py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.4em] flex items-center justify-center gap-3 shadow-xl">
                       <Navigation size={18} /> Navigasi Sekarang
                     </button>
                   </div>
                   <div className="h-[400px] md:h-auto relative">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.721455940348!2d101.55431627481358!3d3.411636296562479!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc8d4239855555%3A0x6b8f3a3a413d7829!2sBukit%20Beruntung%20Golf%20and%20Country%20Resort!5e0!3m2!1sen!2smy!4v1714750000000!5m2!1sen!2smy" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" />
+                    <iframe src="https://maps.google.com/maps?q=AM%20EVENT%20HALL%20Shah%20Alam&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" />
                   </div>
                 </div>
               </BlurReveal>
@@ -818,7 +820,7 @@ export default function Home() {
                               <img src={activeBank === 'maybank' ? '/maybank_qr.png' : '/cimb_qr.png'} alt="QR Code" className="w-full h-full object-cover" />
                             </div>
                             <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'CIMB DuitNow QR'}</p>
-                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">Mariani Binti Mahmud</p>
+                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">Mariani Binti Hussein</p>
                             
                             <div className="flex w-full gap-4">
                               <button onClick={() => copyAccount(activeBank === 'maybank' ? '123456789012' : '8012345678')} className="flex-1 py-5 bg-[#F5F1E9] text-[#8C7355] rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
