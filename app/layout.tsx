@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: "Majlis Perkahwinan Muqri Amin & Syamimi. Sila RSVP kehadiran anda.",
 };
 
+import { Analytics } from "@vercel/analytics/react";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -27,7 +29,10 @@ export default function RootLayout({
       lang="ms"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col overflow-x-hidden">{children}</body>
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
