@@ -6,6 +6,7 @@ import {
   Play, Pause, MapPin, Calendar as CalendarIcon, Clock, Send, 
   MessageCircle, Gift, Heart, Phone, Info, ChevronUp, X, Copy, Check, Navigation, ExternalLink, User, Image as ImageIcon, Sparkles, Scroll, Hash, Users, Camera, Download, Plus, Minus, Quote, CalendarDays
 } from 'lucide-react';
+import Image from 'next/image';
 import FallingPetals from '@/components/FallingPetals';
 import FloatingElements from '@/components/FloatingElements';
 
@@ -548,7 +549,14 @@ export default function Home() {
                     whileHover={{ scale: 1.02 }}
                     className={`relative rounded-[2rem] overflow-hidden shadow-xl border-2 border-white cursor-zoom-in ${img.span} aspect-square md:aspect-auto`}
                   >
-                    <img src={img.src} alt={`Gallery ${idx + 1}`} className="w-full h-full object-cover" />
+                    <Image 
+                      src={img.src} 
+                      alt={`Gallery ${idx + 1}`} 
+                      fill
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                      className="object-cover"
+                      quality={75}
+                    />
                     <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-500" />
                   </motion.div>
                 ))}
@@ -858,8 +866,13 @@ export default function Home() {
                             initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
                             className="bg-white p-6 rounded-[3rem] border border-[#E8E2D8] shadow-xl flex flex-col items-center"
                           >
-                            <div className="w-full aspect-square max-w-[280px] rounded-2xl overflow-hidden mb-6 border-4 border-[#F5F1E9]">
-                              <img src={activeBank === 'maybank' ? '/maybank_qr.png' : '/cimb_qr.png'} alt="QR Code" className="w-full h-full object-cover" />
+                            <div className="w-full aspect-square max-w-[280px] rounded-2xl overflow-hidden mb-6 border-4 border-[#F5F1E9] relative">
+                              <Image 
+                                src={activeBank === 'maybank' ? '/maybank_qr.png' : '/cimb_qr.png'} 
+                                alt="QR Code" 
+                                fill
+                                className="object-cover"
+                              />
                             </div>
                             <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'CIMB DuitNow QR'}</p>
                             <p className="font-serif text-lg mb-8 text-[#1A1A1A]">Mariani Binti Hussein</p>
@@ -884,7 +897,15 @@ export default function Home() {
               {selectedImage && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setSelectedImage(null)} className="fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-6 backdrop-blur-sm">
                   <button className="absolute top-10 right-10 text-white/50 hover:text-white transition-colors"><X size={32} /></button>
-                  <motion.img initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }} src={selectedImage} alt="Fullscreen" className="max-w-full max-h-full rounded-2xl shadow-2xl" />
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image 
+                      src={selectedImage} 
+                      alt="Fullscreen" 
+                      fill
+                      className="object-contain rounded-2xl shadow-2xl"
+                      quality={90}
+                    />
+                  </div>
                 </motion.div>
               )}
             </AnimatePresence>
