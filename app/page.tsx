@@ -379,7 +379,7 @@ export default function Home() {
             className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#FCFBF8] p-6 overflow-hidden"
           >
             <motion.div 
-              className="relative w-full max-sm aspect-[4/3] bg-[#FDFCFB] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-[#E8E2D8] flex flex-col items-center justify-center overflow-hidden"
+              className="relative w-full max-w-md aspect-[4/3] bg-[#FDFCFB] rounded-2xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] border border-[#E8E2D8] flex flex-col items-center justify-center overflow-hidden"
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -547,7 +547,7 @@ export default function Home() {
                     transition={{ delay: idx * 0.1 }}
                     onClick={() => setSelectedImage(img.src)}
                     whileHover={{ scale: 1.02 }}
-                    className={`relative rounded-[2rem] overflow-hidden shadow-xl border-2 border-white cursor-zoom-in ${img.span} aspect-square md:aspect-auto`}
+                    className={`relative rounded-[2rem] overflow-hidden shadow-xl border-2 border-white cursor-zoom-in ${img.span} aspect-square`}
                   >
                     <Image 
                       src={img.src} 
@@ -576,7 +576,7 @@ export default function Home() {
                       <Navigation size={18} /> Navigasi Sekarang
                     </button>
                   </div>
-                  <div className="h-[400px] md:h-auto relative">
+                  <div className="h-[400px] md:h-full relative min-h-[400px]">
                     <iframe src="https://maps.google.com/maps?q=AM%20EVENT%20HALL%20Shah%20Alam&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" />
                   </div>
                 </div>
