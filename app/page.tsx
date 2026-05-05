@@ -465,10 +465,31 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="mb-20">
-                <BlurReveal delay={0.1}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Muqri Amin </h1></BlurReveal>
-                <BlurReveal delay={0.15}><div className="my-6"><Heart className="text-[#D4AF37] mx-auto opacity-20" size={32} /></div></BlurReveal>
-                <BlurReveal delay={0.2}><h1 className="font-serif text-6xl md:text-8xl text-gradient leading-tight">Nur Syamimi</h1></BlurReveal>
+              <div className="mb-20 relative">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none opacity-[0.03]">
+                  <h1 className="text-[12rem] font-script text-[#8C7355] select-none">Wedding</h1>
+                </div>
+                
+                <div className="relative z-10 space-y-2">
+                  <BlurReveal delay={0.1}>
+                    <h1 className="font-script text-8xl md:text-[10rem] text-gradient py-6">Muqri Amin</h1>
+                  </BlurReveal>
+                  
+                  <BlurReveal delay={0.15}>
+                    <motion.div 
+                      animate={{ y: [0, -10, 0], scale: [1, 1.1, 1] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                      className="my-4 relative"
+                    >
+                      <Heart className="text-[#D4AF37] mx-auto" size={40} fill="#D4AF37" fillOpacity={0.1} />
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#D4AF37]/10 rounded-full blur-xl animate-pulse" />
+                    </motion.div>
+                  </BlurReveal>
+                  
+                  <BlurReveal delay={0.2}>
+                    <h1 className="font-script text-8xl md:text-[10rem] text-gradient py-6">Nur Syamimi</h1>
+                  </BlurReveal>
+                </div>
               </div>
             </section>
 
@@ -523,46 +544,7 @@ export default function Home() {
               </BlurReveal>
             </section>
 
-            <section id="gallery" className="w-full max-w-6xl px-6 py-24">
-              <BlurReveal>
-                <div className="text-center mb-16 flex flex-col items-center gap-3">
-                  <Camera className="text-[#D4AF37] opacity-40" size={32} />
-                  <h3 className="font-serif text-4xl text-[#1A1A1A]">Galeri Memori</h3>
-                </div>
-              </BlurReveal>
-              
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-                {[
-                  { src: '/gambar_tunang1.png', span: 'col-span-2 row-span-2' },
-                  { src: '/gambar_tunang2.png', span: 'col-span-1 row-span-1' },
-                  { src: '/gambar_tunang3.png', span: 'col-span-1 row-span-1' },
-                  { src: '/gambar_tunang4.png', span: 'col-span-1 row-span-1' },
-                  { src: '/gambar_tunang5.png', span: 'col-span-1 row-span-1' },
-                ].map((img, idx) => (
-                  <motion.div 
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.1 }}
-                    onClick={() => setSelectedImage(img.src)}
-                    whileHover={{ scale: 1.02 }}
-                    className={`relative rounded-[2rem] overflow-hidden shadow-xl border-2 border-white cursor-zoom-in ${img.span} aspect-square`}
-                  >
-                    <Image 
-                      src={img.src} 
-                      alt={`Gallery ${idx + 1}`} 
-                      fill
-                      sizes="(max-width: 768px) 50vw, 33vw"
-                      className="object-cover"
-                      quality={75}
-                      priority={idx === 0}
-                    />
-                    <div className="absolute inset-0 bg-black/10 opacity-0 hover:opacity-100 transition-opacity duration-500" />
-                  </motion.div>
-                ))}
-              </div>
-            </section>
+
 
             <section id="location-section" className="w-full max-w-4xl px-6 py-20">
               <BlurReveal>
@@ -790,7 +772,6 @@ export default function Home() {
                 { id: 'rsvp', icon: <Send size={20} />, label: 'RSVP' },
                 { id: 'contact', icon: <Phone size={20} />, label: 'HUBUNGI' },
                 { id: 'location', icon: <MapPin size={20} />, label: 'LOKASI' },
-                { id: 'gallery', icon: <ImageIcon size={20} />, label: 'GALERI' },
                 { id: 'gift', icon: <Gift size={20} />, label: 'HADIAH' },
               ].map((item) => (
                 <button key={item.id} onClick={['contact', 'location', 'gift'].includes(item.id) ? () => setActiveDrawer(item.id as any) : () => scrollToSection(item.id)} className="flex flex-col items-center gap-1 group">
