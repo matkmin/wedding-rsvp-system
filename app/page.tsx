@@ -331,12 +331,10 @@ export default function Home() {
   };
 
   const contacts = [
-    { name: 'Ayah Pengantin Lelaki (Shamsuddin)', phone: '60123456789' },
-    { name: 'Ibu Pengantin Lelaki (Mariani)', phone: '60123456789' },
-    { name: 'Ayah Pengantin Perempuan (Fauzi)', phone: '60123456789' },
-    { name: 'Ibu Pengantin Perempuan (Naimah)', phone: '60198765432' },
-    { name: 'Muqri Amin', phone: '601114907908' },
-    { name: 'Syamimi', phone: '601151533014' }
+    { name: 'Ayah Pengantin Lelaki (Shamsuddin)', phone: '60199878467' },
+    { name: 'Adik Pengantin Lelaki (Alireza)', phone: '601137385199' },
+    { name: 'Abang Pengantin Perempuan (Faiz)', phone: '60179071200' },
+    { name: 'Adik Pengantin Perempuan (Farid)', phone: '60102921418' },
   ];
 
   return (
