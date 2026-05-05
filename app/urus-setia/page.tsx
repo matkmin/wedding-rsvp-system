@@ -26,6 +26,8 @@ export default function AdminPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filter, setFilter] = useState<'All' | 'Hadir' | 'Tidak Hadir'>('All');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const SECRET_PASSCODE = 'MUQRI2026';
 
@@ -36,6 +38,10 @@ export default function AdminPage() {
       fetchRSVPs();
     }
   }, []);
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, filter]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,6 +92,12 @@ export default function AdminPage() {
     const matchesFilter = filter === 'All' || item.attendance === filter;
     return matchesSearch && matchesFilter;
   });
+
+  const totalPages = Math.ceil(filteredRSVPs.length / itemsPerPage);
+  const paginatedRSVPs = filteredRSVPs.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
 
   const stats = {
     total: rsvps.length,
@@ -253,10 +265,10 @@ export default function AdminPage() {
               <tbody className="divide-y divide-[#F5F1E9]">
                 {loading ? (
                   <tr><td colSpan={6} className="px-8 py-20 text-center text-[#7A7A7A] font-serif italic">Memuatkan data...</td></tr>
-                ) : filteredRSVPs.length === 0 ? (
+                ) : paginatedRSVPs.length === 0 ? (
                   <tr><td colSpan={6} className="px-8 py-20 text-center text-[#7A7A7A] font-serif italic">Tiada data dijumpai.</td></tr>
                 ) : (
-                  filteredRSVPs.map((r) => (
+                  paginatedRSVPs.map((r) => (
                     <tr key={r.id} className="hover:bg-[#F9F7F4]/30 transition-colors group">
                       <td className="px-8 py-6 font-serif text-[#1A1A1A]">{r.name}</td>
                       <td className="px-8 py-6">
@@ -283,6 +295,40 @@ export default function AdminPage() {
               </tbody>
             </table>
           </div>
+
+          {/* Pagination Controls */}
+          {totalPages > 1 && (
+            <div className="px-8 py-6 bg-[#F9F7F4]/30 border-t border-[#F5F1E9] flex items-center justify-between">
+              <p className="text-[10px] font-black uppercase tracking-widest text-[#7A7A7A]">
+                Halaman {currentPage} daripada {totalPages} ({filteredRSVPs.length} tetamu)
+              </p>
+              <div className="flex items-center gap-2">
+                <button 
+                  disabled={currentPage === 1}
+                  onClick={() => setCurrentPage(prev => prev - 1)}
+                  className="p-2 rounded-lg border border-[#E8E2D8] text-[#8C7355] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white transition-all"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
+                  <button
+                    key={page}
+                    onClick={() => setCurrentPage(page)}
+                    className={`w-10 h-10 rounded-lg text-[10px] font-black transition-all ${currentPage === page ? 'bg-[#1A1A1A] text-white shadow-md' : 'text-[#7A7A7A] hover:bg-white'}`}
+                  >
+                    {page}
+                  </button>
+                )).slice(Math.max(0, currentPage - 3), Math.min(totalPages, currentPage + 2))}
+                <button 
+                  disabled={currentPage === totalPages}
+                  onClick={() => setCurrentPage(prev => prev + 1)}
+                  className="p-2 rounded-lg border border-[#E8E2D8] text-[#8C7355] disabled:opacity-30 disabled:cursor-not-allowed hover:bg-white transition-all"
+                >
+                  <ChevronLeft size={18} className="rotate-180" />
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </main>
     </div>
