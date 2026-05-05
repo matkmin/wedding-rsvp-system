@@ -435,7 +435,7 @@ export default function Home() {
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Lelaki</span>
                   </div>
-                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.2} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.2} className="font-luxury italic text-2xl md:text-4xl text-[#1A1A1A] leading-tight" />
                 </div>
 
                 <div className="relative flex justify-center items-center py-4">
@@ -448,7 +448,7 @@ export default function Home() {
                   <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Perempuan</span>
                   </div>
-                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={0.4} className="font-serif text-xl md:text-2xl text-[#1A1A1A] leading-tight" />
+                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={0.4} className="font-luxury italic text-2xl md:text-4xl text-[#1A1A1A] leading-tight" />
                 </div>
               </div>
 
@@ -699,8 +699,8 @@ export default function Home() {
                   <Hash className="text-[#D4AF37]" size={32} />
                   <h4 className="font-serif text-2xl">Kongsi Momen Anda</h4>
                   <p className="text-xs text-[#7A7A7A] italic font-serif leading-relaxed px-4">Gunakan hashtag peribadi kami di media sosial untuk berkongsi kegembiraan majlis ini.</p>
-                  <button onClick={() => copyHashtag('#MuqriSyamimi2026')} className="group relative px-10 py-5 bg-white rounded-2xl border-2 border-[#D4AF37]/30 flex items-center gap-4 hover:bg-[#D4AF37] transition-all duration-500">
-                    <span className={`font-serif text-xl ${hashtagCopied ? 'text-white' : 'text-[#8C7355]'} group-hover:text-white transition-colors`}>#MuqriSyamimi2026</span>
+                  <button onClick={() => copyHashtag('#MuqriSyamimiTillJannah')} className="group relative px-10 py-5 bg-white rounded-2xl border-2 border-[#D4AF37]/30 flex items-center gap-4 hover:bg-[#D4AF37] transition-all duration-500">
+                    <span className={`font-serif text-xl ${hashtagCopied ? 'text-white' : 'text-[#8C7355]'} group-hover:text-white transition-colors`}>#MuqriSyamimiTillJannah</span>
                     {hashtagCopied ? <Check className="text-white" size={20} /> : <Copy className="text-[#D4AF37] group-hover:text-white" size={20} />}
                   </button>
                   {hashtagCopied && <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37]">Hashtag Berhasil Disalin!</p>}
