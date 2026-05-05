@@ -765,7 +765,7 @@ export default function Home() {
               </BlurReveal>
             </section>
 
-            <div className="pb-40 pt-10 text-[10px] uppercase tracking-[1.2em] text-[#8C7355] font-black opacity-30">MUQRI & SYAMIMI • 2026</div>
+            <div className="pb-40 pt-10 text-[10px] uppercase tracking-[1.2em] text-[#8C7355] font-black opacity-30">MUQRI & MIMI • TILL JANNAH</div>
 
             <motion.nav initial={{ y: 100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 1 }} className="fixed bottom-8 left-1/2 -translate-x-1/2 w-[92%] max-w-md glass rounded-full shadow-2xl px-8 py-4 z-50 flex items-center justify-between border border-white/20">
               {[
