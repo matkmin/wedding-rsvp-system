@@ -770,9 +770,8 @@ export default function Home() {
                 { id: 'rsvp', icon: <Send size={20} />, label: 'RSVP' },
                 { id: 'contact', icon: <Phone size={20} />, label: 'HUBUNGI' },
                 { id: 'location', icon: <MapPin size={20} />, label: 'LOKASI' },
-                { id: 'gift', icon: <Gift size={20} />, label: 'HADIAH' },
               ].map((item) => (
-                <button key={item.id} onClick={['contact', 'location', 'gift'].includes(item.id) ? () => setActiveDrawer(item.id as any) : () => scrollToSection(item.id)} className="flex flex-col items-center gap-1 group">
+                <button key={item.id} onClick={['contact', 'location'].includes(item.id) ? () => setActiveDrawer(item.id as any) : () => scrollToSection(item.id)} className="flex flex-col items-center gap-1 group">
                   <div className="text-[#7A7A7A] group-hover:text-[#D4AF37] transition-all duration-500">{item.icon}</div>
                   <span className="text-[6px] font-black uppercase tracking-widest text-[#7A7A7A]">{item.label}</span>
                 </button>
@@ -829,46 +828,7 @@ export default function Home() {
                         </div>
                       </div>
                     )}
-                    {activeDrawer === 'gift' && (
-                      <div className="text-center max-lg mx-auto pb-10">
-                        <Gift className="text-[#D4AF37] mx-auto mb-6" size={48} />
-                        <h3 className="font-serif text-3xl mb-4">Salam Restu & Hadiah</h3>
-                        <p className="text-xs text-[#7A7A7A] italic font-serif mb-10 px-6 leading-relaxed">Pemberian anda adalah tanda ingatan yang sangat kami hargai. Sila imbas QR di bawah untuk pemberian digital.</p>
-                        
-                        <div className="flex bg-[#F5F1E9] p-2 rounded-2xl mb-10 gap-2">
-                          <button onClick={() => setActiveBank('maybank')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'maybank' ? 'bg-white text-[#D4AF37] shadow-md' : 'text-[#7A7A7A]'}`}>Maybank</button>
-                          <button onClick={() => setActiveBank('cimb')} className={`flex-1 py-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activeBank === 'cimb' ? 'bg-white text-[#8C1B1B] shadow-md' : 'text-[#7A7A7A]'}`}>Ryt Bank</button>
-                        </div>
 
-                        <AnimatePresence mode="wait">
-                          <motion.div 
-                            key={activeBank}
-                            initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
-                            className="bg-white p-6 rounded-[3rem] border border-[#E8E2D8] shadow-xl flex flex-col items-center"
-                          >
-                            <div className="w-full aspect-square max-w-[280px] rounded-2xl overflow-hidden mb-6 border-4 border-[#F5F1E9] relative">
-                              <Image 
-                                src={activeBank === 'maybank' ? '/maybank_muqri.png' : '/ryt_bank_muqri.jpg'} 
-                                alt="QR Code" 
-                                fill
-                                className="object-cover"
-                              />
-                            </div>
-                            <p className="text-[10px] font-black text-[#8C7355] uppercase tracking-widest mb-2">{activeBank === 'maybank' ? 'Maybank DuitNow QR' : 'Ryt Bank DuitNow QR'}</p>
-                            <p className="font-serif text-lg mb-8 text-[#1A1A1A]">{activeBank === 'maybank' ? 'Muqri Amin' : 'Muqri Amin'}</p>
-                            
-                            <div className="flex w-full gap-4">
-                              <button onClick={() => copyAccount(activeBank === 'maybank' ? '162786406748' : '8012345678')} className="flex-1 py-5 bg-[#F5F1E9] text-[#8C7355] rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
-                                {copied ? <Check size={16} /> : <Copy size={16} />} {copied ? 'Salin' : 'Salin No.'}
-                              </button>
-                              <a href={activeBank === 'maybank' ? '/maybank_muqri.png' : '/ryt_bank_muqri.jpg'} download className="flex-1 py-5 bg-[#1A1A1A] text-white rounded-2xl font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-2">
-                                <Download size={16} /> Simpan QR
-                              </a>
-                            </div>
-                          </motion.div>
-                        </AnimatePresence>
-                      </div>
-                    )}
                   </motion.div>
                 </>
               )}
