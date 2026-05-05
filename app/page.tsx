@@ -428,12 +428,16 @@ export default function Home() {
             <section className="w-full max-w-2xl px-6 pt-24 pb-16 text-center">
               <Typewriter text="Assalammualaikum W.B.T" className="font-italiana text-lg text-[#D4AF37] mb-12 tracking-[0.2em]" />
               
-              <div className="mb-20 space-y-12">
-                <div className="space-y-4">
-                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
+              <div className="mb-20 space-y-16">
+                <div className="flex flex-col items-center mb-8">
+                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-12">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Lelaki</span>
                   </div>
-                  <Typewriter text="Mohd Shamsuddin Bin Omar & Mariani Binti Hussein" delay={0.2} className="font-luxury italic text-2xl md:text-4xl text-[#1A1A1A] leading-tight" />
+                  <div className="flex flex-col items-center gap-2">
+                    <Typewriter text="Mohd Shamsuddin Bin Omar" delay={0.2} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
+                    <motion.span initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="font-script text-2xl text-[#D4AF37]">&</motion.span>
+                    <Typewriter text="Mariani Binti Hussein" delay={0.3} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
+                  </div>
                 </div>
 
                 <div className="relative flex justify-center items-center py-4">
@@ -442,11 +446,15 @@ export default function Home() {
                   <div className="absolute w-20 h-[0.5px] bg-[#D4AF37]/30 right-1/2 translate-x-[120%]" />
                 </div>
 
-                <div className="space-y-4">
-                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-2">
+                <div className="flex flex-col items-center -mt-6">
+                  <div className="inline-block px-4 py-1.5 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-12">
                     <span className="text-[7px] font-black uppercase tracking-[0.3em] text-[#8C7355]">Keluarga Perempuan</span>
                   </div>
-                  <Typewriter text="Mohd Fauzi Bin Ariffin & Naimah Binti Hassan" delay={0.4} className="font-luxury italic text-2xl md:text-4xl text-[#1A1A1A] leading-tight" />
+                  <div className="flex flex-col items-center gap-2">
+                    <Typewriter text="Mohd Fauzi Bin Ariffin" delay={0.4} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
+                    <motion.span initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.7 }} className="font-script text-2xl text-[#D4AF37]">&</motion.span>
+                    <Typewriter text="Naimah Binti Hassan" delay={0.5} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
+                  </div>
                 </div>
               </div>
 
