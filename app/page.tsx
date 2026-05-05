@@ -700,7 +700,7 @@ export default function Home() {
                   <h4 className="font-serif text-2xl">Kongsi Momen Anda</h4>
                   <p className="text-xs text-[#7A7A7A] italic font-serif leading-relaxed px-4">Gunakan hashtag peribadi kami di media sosial untuk berkongsi kegembiraan majlis ini.</p>
                   <button onClick={() => copyHashtag('#MuqriSyamimiTillJannah')} className="group relative px-10 py-5 bg-white rounded-2xl border-2 border-[#D4AF37]/30 flex items-center gap-4 hover:bg-[#D4AF37] transition-all duration-500">
-                    <span className={`font-serif text-xl ${hashtagCopied ? 'text-white' : 'text-[#8C7355]'} group-hover:text-white transition-colors`}>#MuqriSyamimiTillJannah</span>
+                    <span className={`font-serif text-xl ${hashtagCopied ? 'text-white' : 'text-[#8C7355]'} group-hover:text-white transition-colors`}>#.MuqriSyamimiTillJannah</span>
                     {hashtagCopied ? <Check className="text-white" size={20} /> : <Copy className="text-[#D4AF37] group-hover:text-white" size={20} />}
                   </button>
                   {hashtagCopied && <p className="text-[10px] font-black uppercase tracking-widest text-[#D4AF37]">Hashtag Berhasil Disalin!</p>}
