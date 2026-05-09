@@ -436,7 +436,7 @@ export default function Home() {
                   <div className="flex flex-col items-center gap-2">
                     <Typewriter text="Mohd Shamsuddin Bin Omar" delay={0.2} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
                     <motion.span initial={{ opacity: 0, scale: 0 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="font-script text-2xl text-[#D4AF37]">&</motion.span>
-                    <Typewriter text="Mariani Binti Hussein" delay={0.3} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
+                    <Typewriter text="Mariani Binti Hussin" delay={0.3} className="font-luxury italic text-xl md:text-3xl text-[#1A1A1A] leading-tight" />
                   </div>
                 </div>
 
