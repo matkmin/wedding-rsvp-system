@@ -598,7 +598,7 @@ export default function Home() {
                   <div className="absolute top-0 right-0 p-8 opacity-5"><Send size={120} className="text-[#8C7355]" /></div>
                   
                   <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-3 px-6 py-2 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-6">
+                    <div className="hidden items-center gap-3 px-6 py-2 bg-[#F5F1E9] rounded-full border border-[#E8E2D8] mb-6">
                       <Users size={16} className="text-[#D4AF37]" />
                       <span className="text-[10px] font-black uppercase tracking-widest text-[#8C7355]">{totalGuests} Orang Akan Hadir</span>
                     </div>
